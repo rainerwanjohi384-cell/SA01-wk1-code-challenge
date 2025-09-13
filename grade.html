@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student grade generator</title>
+</head>
+<body>
+    <h2>student grade generator</h2>
+    <input type="number" id="marks" placeholder="Enter your marks (0-100)">
+    <button onclick="generateGrade()">Get Grade</button>
+    <p id="result"></p>
+
+    <script>
+        function generateGrade() {
+            const marks = document.getElementById('marks').value;
+            let grade;
+
+            if (marks > 79) {
+                grade = 'A';
+            } else if (marks >= 60 && marks <= 79) {
+                grade = 'B';
+            } else if (marks >= 50 && marks <= 59) {
+                grade = 'C';
+            } else if (marks >= 40 && marks <= 49) {
+                grade = 'D';
+            } else if (marks >= 0 && marks <= 39) {
+                grade = 'E';
+            } else {
+                grade = 'Invalid marks';
+            }
+
+            document.getElementById('result').innerText = "Your grade is:" + grade;
+        }
+    </script>
+</body>
+</html>

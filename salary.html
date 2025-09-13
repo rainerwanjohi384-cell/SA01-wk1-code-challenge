@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speed detector</title>
+</head>
+<body>
+    <h2>net salary calculator</h2>
+    <input type="number" id="basic salary" placeholder="Enter your basic salary">
+    <input type="number" id="benefits" placeholder="Enter your benefits"> 
+    <button onclick="calculateNetSalary()">Calculate</button>
+    <p id="result"></p>
+    
+    <script>
+        function calculatesalary() {
+            let basicsalary = parseInt(document.getElementById('basic value').value);
+            let benefits = parseInt(document.getElementById('benefits').value);
+            let grosssalary = basicsalary + benefits;
+
+            let tax;
+            if (grosssalary <= 24000) {
+                tax = 0.1 * grosssalary;
+            } else if (grosssalary <= 32333) {
+                tax = 0.25 * grosssalary;
+            } else {
+                tax = 0.3 * grosssalary;
+            }
+
+            let nhif = 750; // Simplified fixed NHIF deduction
+            let nssf = grosssalary * 0.06; // 6% NSSF deduction
+
+            let netSalary = grosssalary - tax - nhif - nssf;
+
+            document.getElementById('re
+        }
+    </script>
+</body>
+</html>
